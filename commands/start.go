@@ -23,26 +23,26 @@ func Start(b ext.Bot, u *gotgbot.Update) error {
 	startButton := [][]ext.InlineKeyboardButton{make([]ext.InlineKeyboardButton, 2), make([]ext.InlineKeyboardButton, 1)}
 
 	startButton[0][0] = ext.InlineKeyboardButton{
-		Text: "𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘",
+		Text: "𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 📩",
 		Url:  "https://t.me/NoSourceCode",
 	}
 
 	startButton[0][1] = ext.InlineKeyboardButton{
-		Text: "𝗠𝗬 𝗖𝗥𝗘𝗔𝗧𝗢𝗥",
+		Text: "𝗠𝗬 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 🧕",
 		Url:  "https://telegram.dog/Iggie",
 	}
 
 	startButton[1][0] = ext.InlineKeyboardButton{
-		Text: "𝗛𝗢𝗪 𝗧𝗢 𝗖𝗥𝗘𝗔𝗧𝗘 𝗔 𝗕𝗢𝗧 𝗟𝗜𝗞𝗘 𝗠𝗘?",
-		Url:  "https://www.youtube.com/watch?v=swg6un2N4Fk&feature=youtu.be",
+		Text: "𝗦𝗨𝗣𝗣𝗢𝗥𝗧 𝗕𝗬 𝗝𝗢𝗜𝗡𝗜𝗡𝗚 𝗢𝗨𝗥 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 🥳",
+		Url:  "https://t.me/joinchat/AAAAAE-44AkxSyqIMj1tdQ",
 	}
 
 	markup := ext.InlineKeyboardMarkup{InlineKeyboard: &startButton}
 
-	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("Hi [%s](tg://user?id=%v)\nI am A Forward Tag remover Bot.Send /help To Know What I Can Do", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
+	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("<b>Hello [%s](tg://user?id=%v) 😎, I'm A 𝗙𝗢𝗥𝗪𝗔𝗥𝗗 𝗧𝗔𝗚 𝗥𝗘𝗠𝗢𝗩𝗘𝗥 𝗕𝗢𝗧.\n\nSend /help To Know What I Can Do</b>", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
 	msg.ReplyToMessageId = u.EffectiveMessage.MessageId
 	msg.ReplyMarkup = &markup
-	msg.ParseMode = parsemode.Markdown
+	msg.ParseMode = parsemode.html
 	_, err := msg.Send()
 	if err != nil {
 		b.Logger.Warnw("Error in sending", zap.Error(err))
