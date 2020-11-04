@@ -8,7 +8,9 @@
  */
 
 package commands
+
 from telegram import ParseMode
+
 import (
 	"fmt"
 
