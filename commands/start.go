@@ -38,7 +38,7 @@ func Start(b ext.Bot, u *gotgbot.Update) error {
 
 	markup := ext.InlineKeyboardMarkup{InlineKeyboard: &startButton}
 
-	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("*Hello [%s](tg://user?id=%v) 😎, I'm A 𝗙𝗢𝗥𝗪𝗔𝗥𝗗 𝗧𝗔𝗚 𝗥𝗘𝗠𝗢𝗩𝗘𝗥 𝗕𝗢𝗧.*\n\n*Send /help To Know What I Can Do*", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
+	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("*Hello* [%s](tg://user?id=%v) 😎, *I'm A 𝗙𝗢𝗥𝗪𝗔𝗥𝗗 𝗧𝗔𝗚 𝗥𝗘𝗠𝗢𝗩𝗘𝗥 𝗕𝗢𝗧.*\n\n*Send /help To Know What I Can Do*", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
 	msg.ReplyToMessageId = u.EffectiveMessage.MessageId
 	msg.ReplyMarkup = &markup
 	msg.ParseMode = parsemode.Markdown
