@@ -8,9 +8,6 @@
  */
 
 package commands
-
-from telegram import ParseMode
-
 import (
 	"fmt"
 
@@ -44,7 +41,7 @@ func Start(b ext.Bot, u *gotgbot.Update) error {
 	msg := b.NewSendableMessage(u.EffectiveChat.Id, fmt.Sprintf("<b>Hello [%s](tg://user?id=%v) 😎, I'm A 𝗙𝗢𝗥𝗪𝗔𝗥𝗗 𝗧𝗔𝗚 𝗥𝗘𝗠𝗢𝗩𝗘𝗥 𝗕𝗢𝗧.\n\nSend /help To Know What I Can Do</b>", u.EffectiveUser.FirstName, u.EffectiveUser.Id))
 	msg.ReplyToMessageId = u.EffectiveMessage.MessageId
 	msg.ReplyMarkup = &markup
-	msg.ParseMode = parsemode.html
+	msg.ParseMode = parsemode.Markdown
 	_, err := msg.Send()
 	if err != nil {
 		b.Logger.Warnw("Error in sending", zap.Error(err))
