@@ -5,7 +5,7 @@ A Simple Forward Tag remover Telegram Bot Made in Go.
 
 #### The Easy Way
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Anandpskerala/ForwardTagRemoverBot/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Subwayqueen/ForwardTagRemoverBot/tree/master)
 
 ##### Required Variables
 
